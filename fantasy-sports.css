@@ -60,10 +60,13 @@ div.mat-card ul li:first-child {
     background: #0093ff;
 }
 
+.green {
+    background: #21b519;
+}
+
 .btn-mat:active {
     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12)
 }
-
 
 /* Ripple magic */
 
@@ -512,4 +515,146 @@ div.basket-logo {
     margin-left: 5px;
     background: url("icons/ballon-basket.png") no-repeat center;
     background-size: 100% auto;
+}
+
+/* #171e32 */
+
+.header-wrapper .header-main-menu .menu {
+    position: inherit;
+}
+
+.header-wrapper .acmethemes-nav {
+    float: none;
+}
+
+/* .acmethemes-nav ul li.menu-item-has-children>a::after {
+    border-top-color: #2d2d2d;
+} */
+
+/* .main-navigation ul li {
+    border: none;
+    border-right: 1px solid #ccc;
+} */
+
+.main-navigation ul:first-child {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.main-navigation ul:first-child::after {
+    content: '';
+    flex-grow: 1;
+    order: 0;
+}
+
+.menu-right {
+    order: 1;
+}
+
+.menu-left,
+.menu-right {
+    padding: 0 5px;
+}
+
+aside.bk-offer-widget div.mat-card {
+    margin: 5px 0;
+    padding: 8px 2px;
+    background-color: #FAFAFA;
+    height: 70px;
+    display: flex;
+}
+
+aside.bk-offer-widget div.mat-card div.bk-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+aside.bk-offer-widget div.mat-card div.bk-img img {
+    max-width: 100px;
+}
+
+aside.bk-offer-widget div.mat-card div.bk-line a.btn-mat {
+    padding: 8px 12px;
+    font-size: 16px;
+}
+
+aside.daily-games-widget div.mat-card {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: #292929;
+    height: 275px;
+    /* display: flex; */
+}
+
+aside.daily-games-widget div.mat-card div.mat-container {
+    width: 100%;
+    height: 100%;
+    background-image: url(images/terrain-football.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.odd-button {
+    background: #fc0;
+}
+
+.odd-button:hover {
+    background: #ffe57ff5;
+}
+
+
+aside.daily-games-widget .team-caption {
+    background: rgba(0, 0, 0, 0.15);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top:8px;
+}
+
+aside.daily-games-widget .slide-caption {
+    height: 55px;
+    background: rgba(0, 0, 0, 0.5);
+    padding-top: 5px;
+}
+
+aside.daily-games-widget .slide-caption strong {
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 1.2;
+    text-align: center;
+}
+
+aside.daily-games-widget .slide-caption .match-time {
+    color: #999;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+aside.daily-games-widget div.teams {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+aside.daily-games-widget div.teams img {
+    width: 75%;
+}
+
+aside.daily-games-widget div.teams div.left {
+    text-align: center;
+    width: 50%;
+}
+
+aside.daily-games-widget div.teams div.right {
+    text-align: center;
+    width: 50%;
 }

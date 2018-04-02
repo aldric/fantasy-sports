@@ -39,7 +39,7 @@
                 </span>
             </div>
 
-            <div class="bk-center"><a class="btn-mat cyan" href="<?php echo $bookie->aff_link_fl != null ? $bookie->aff_link_fl : $bookie->aff_link; ?>" role="button" target="_blank" rel="nofollow"><?php echo $bookie->aff_text_fl_short; ?></a></div>
+            <div class="bk-center"><a class="btn-mat <?php echo $bookie->aff_link_fl_color; ?>" href="<?php echo $bookie->aff_link_fl != null ? $bookie->aff_link_fl : $bookie->aff_link; ?>" role="button" target="_blank" rel="nofollow"><?php echo $bookie->aff_text_fl_short; ?></a></div>
             <div class="bk-center">
                 <a class="alert-link text-success-2 review-link" href="<?php echo $bookie->review_link; ?>" ><?php echo $bookie->review_text_short; ?></a>
             </div>

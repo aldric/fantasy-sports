@@ -38,7 +38,7 @@
             </div>
             
             <div class="bk-center">
-                <a class="btn-mat orange" href="<?php echo $bookie->aff_link; ?>" role="button" target="_blank" rel="nofollow"><?php echo $bookie->aff_text_short; ?></a>
+                <a class="btn-mat <?php echo $bookie->aff_link_color; ?>" href="<?php echo $bookie->aff_link; ?>" role="button" target="_blank" rel="nofollow"><?php echo $bookie->aff_text_short; ?></a>
             </div>
             <div class="bk-center">
                 <a class="alert-link text-success-2 review-link" href="<?php echo $bookie->review_link; ?>" ><?php echo $bookie->review_text_short; ?></a>

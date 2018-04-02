@@ -97,6 +97,7 @@ if (!class_exists('Bookmaker_Repository')) {
                 $ranking_data->live_bets = get_field('bk_live_bets', $id);
                 
                 $ranking_data->aff_link = get_field('bk_aff_link', $id);
+                $ranking_data->aff_link_color = get_field('bk_aff_link_color', $id);
                 $ranking_data->aff_text_long = get_field('bk_aff_text_long', $id);
                 $ranking_data->aff_text_short = get_field('bk_aff_text_short', $id);
                 
@@ -114,6 +115,7 @@ if (!class_exists('Bookmaker_Repository')) {
                 $ranking_data->fl_maxgain_label = get_field('bk_fl_maxgain_label', $id);
                 $ranking_data->fl_maxgain = get_field('bk_fl_maxgain', $id);
                 $ranking_data->aff_link_fl = get_field('bk_aff_link_fl', $id);
+                $ranking_data->aff_link_fl_color = get_field('bk_aff_link_fl_color', $id);
                 $ranking_data->aff_text_fl_long = get_field('bk_aff_text_fl_long', $id);
                 $ranking_data->aff_text_fl_short = get_field('bk_aff_text_fl_short', $id);
                 $ranking_data->fl_available_sports_label = get_field('bk_fl_available_sports_label', $id);
@@ -160,6 +162,7 @@ if (!class_exists('Bookmaker_Repository')) {
         public $live_bets;
 
         public $aff_link;
+        public $aff_link_color;
         public $aff_text_long;
         public $aff_text_short;
         
@@ -177,6 +180,7 @@ if (!class_exists('Bookmaker_Repository')) {
         public $football;
         public $basketball;
         public $aff_link_fl;
+        public $aff_link_fl_color;
         public $aff_text_fl_long;
         public $aff_text_fl_short;
 

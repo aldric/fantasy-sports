@@ -19,7 +19,7 @@
         </div>
         <div class="bk-line"><span class="h5"><?php echo $data->bonus_label; ?></span><span class="h4 bl text-success-2"><?php echo $data->bonus; ?></span></div>
         <div class="bk-line"><span class="h5"><?php echo $data->bonus_type_label; ?></span><span class="h4 bl text-success-2"><?php echo $data->bonus_type; ?></span></div>
-        <div class="bk-line"><span class="h5"><?php echo $data->first_deposit_label; ?></span><span class="h4 bl text-success-2"><?php echo $data->first_deposit; ?></div>
+        <div class="bk-line"><span class="h5"><?php echo $data->first_deposit_label; ?></span><span class="h4 bl text-success-2"><?php echo $data->first_deposit; ?></span></div>
         <div class="bk-line"><span class="h5"><?php echo $data->odds_label; ?></span>
             <span class="h5 rating-gold">
                 <?php for ($x = 0; $x < $data->odds; $x++) { ?>
@@ -62,7 +62,7 @@
          </div>
       
         <div class="bk-center">
-            <a class="btn-mat orange" href="<?php echo $data->aff_link; ?>" role="button" target="_blank" rel="nofollow"><?php echo $data->aff_text_long; ?></a>
+            <a class="btn-mat <?php echo $data->aff_link_color; ?>" href="<?php echo $data->aff_link; ?>" role="button" target="_blank" rel="nofollow"><?php echo $data->aff_text_long; ?></a>
         </div>
        
        
@@ -108,7 +108,7 @@
         </span>
        </div>
 
-    <div class="bk-center"><a class="btn-mat cyan" href="<?php echo $ranking_data->aff_link_fl != null ? $ranking_data->aff_link_fl : $data->aff_link; ?>" role="button" target="_blank" rel="nofollow"><?php echo $data->aff_text_fl_long; ?></a></div>
+    <div class="bk-center"><a class="btn-mat <?php echo $data->aff_link_fl_color; ?>" href="<?php echo $data->aff_link_fl != null ? $data->aff_link_fl : $data->aff_link; ?>" role="button" target="_blank" rel="nofollow"><?php echo $data->aff_text_fl_long; ?></a></div>
   </div>    
 </aside>
 <?php 
