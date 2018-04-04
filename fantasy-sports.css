@@ -584,9 +584,9 @@ aside.bk-offer-widget div.mat-card div.bk-line a.btn-mat {
 aside.daily-games-widget div.mat-card {
     margin: 5px 0;
     padding: 5px;
-    background-color: #292929;
+    background-color: #2d2d2d;
     height: 275px;
-    /* display: flex; */
+    display: flex;
 }
 
 aside.daily-games-widget div.mat-card div.mat-container {
@@ -595,6 +595,8 @@ aside.daily-games-widget div.mat-card div.mat-container {
     background-image: url(images/terrain-football.jpg);
     background-size: contain;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
 }
 
 .odd-button {
@@ -605,24 +607,36 @@ aside.daily-games-widget div.mat-card div.mat-container {
     background: #ffe57ff5;
 }
 
-
 aside.daily-games-widget .team-caption {
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.45);
     color: #fff;
     font-size: 14px;
     font-weight: 400;
-    margin-top:8px;
+    margin-top: 8px;
 }
 
 aside.daily-games-widget .slide-caption {
     height: 55px;
     background: rgba(0, 0, 0, 0.5);
-    padding-top: 5px;
+    text-align: center;
+}
+aside.daily-games-widget .slide-caption img {
+    display: inline;
 }
 
-aside.daily-games-widget .slide-caption strong {
+aside.daily-games-widget .slide-footer {
+    background: rgba(0, 0, 0, 0.5);
     color: #fff;
-    display: block;
+    font-weight: 400;
+    text-align: center;
+}
+
+aside.daily-games-widget .slide-caption img {
+    max-width: 32px;
+}
+
+aside.daily-games-widget .slide-caption span {
+    color: #fff;
     font-size: 16px;
     font-weight: 200;
     line-height: 1.2;
@@ -633,20 +647,23 @@ aside.daily-games-widget .slide-caption .match-time {
     color: #999;
     font-size: 14px;
     font-weight: 600;
-    text-align: center;
     text-transform: capitalize;
 }
 
 aside.daily-games-widget div.teams {
     display: flex;
-    justify-content: space-between;
-    padding-top: 5px;
-    padding-bottom: 20px;
-    background: rgba(0, 0, 0, 0.35);
+    flex-grow: 2;
+}
+
+aside.daily-games-widget div.teams>div {
+    display: flex;
+    flex-direction: column;
 }
 
 aside.daily-games-widget div.teams img {
     width: 75%;
+    vertical-align: text-top;
+    margin: 0 auto;
 }
 
 aside.daily-games-widget div.teams div.left {
@@ -657,4 +674,73 @@ aside.daily-games-widget div.teams div.left {
 aside.daily-games-widget div.teams div.right {
     text-align: center;
     width: 50%;
+}
+
+aside.daily-games-widget div.odds {
+    display: flex;
+    color: #fff;
+    justify-content: space-around;
+    margin-bottom: 4px;
+}
+
+aside.daily-games-widget div.odds div {
+    text-align: center;
+}
+
+aside.daily-games-widget div.bx-controls {
+    margin-bottom: 20px;
+}
+
+aside.daily-games-widget a.odd-value {
+    padding: 4px 14px;
+    border-radius: 2px;
+    font-size: 14px;
+    box-shadow: 0 3px 1px -2px rgba(1, 1, 1, .2), 0 2px 2px 0 rgba(1, 1, 1, .14), 0 1px 5px 0 rgba(1, 1, 1, .12);
+}
+
+.bx-wrapper .bx-controls-direction a {
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
+    outline: 0;
+    width: 32px;
+    height: 32px;
+    text-indent: -9999px;
+    z-index: 9999;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+    background: #045194;
+}
+
+.bx-wrapper .bx-prev {
+    left: 10px;
+    background: url('../../themes/supermagpro/assets/library/bxslider/images/controls.png') no-repeat 0 -32px;
+}
+
+.bx-wrapper .bx-next {
+    right: 10px;
+    background: url('../../themes/supermagpro/assets/library/bxslider/images/controls.png') no-repeat -43px -32px;
+}
+
+aside.daily-games-widget .overlay-b {
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: flex-end;
+    display: flex;
+    height: 60%;
+}
+
+aside.daily-games-widget .overlay-b div {
+    text-align: center;
+}
+
+aside.daily-games-widget div.overlay-b a {
+    padding: 6px 10px;
+    font-size: 14px;
 }

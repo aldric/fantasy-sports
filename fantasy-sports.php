@@ -69,6 +69,43 @@ function cptui_register_my_cpts_fiche_bookmaker()
 add_action('init', 'cptui_register_my_cpts_fiche_bookmaker');
 
 
+function cptui_register_my_cpts_fiche_highlighted_event()
+{
+	/**
+	 * Post Type: Matchs a la une Bookmaker.
+	 */
+
+	$labels = array(
+		"name" => __("Matchs", "supermagpro-child"),
+		"singular_name" => __("Match", "supermagpro-child"),
+	);
+
+	$args = array(
+		"label" => __("Match", "supermagpro-child"),
+		"labels" => $labels,
+		"description" => "Fiche descriptive d\'un match",
+		"public" => true,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"exclude_from_search" => true,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => false,
+		"query_var" => true,
+		"menu_icon" => "dashicons-megaphone",
+		"supports" => array("title"),
+	);
+	register_post_type("highlighted_event", $args);
+}
+
+add_action('init', 'cptui_register_my_cpts_fiche_highlighted_event');
+
+
 
 /*******************************
  * 

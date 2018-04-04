@@ -37,20 +37,35 @@ if (!class_exists('DailyGame_Widget')) {
                 return '';
             $data = new DailyGameWidget();
             $data->widget_title = get_field('widget_title', $widget_id);
-            $data->event_punchline = get_field('event_punchline', $widget_id);
-            $data->event_date = get_field('event_date', $widget_id);
-            $data->team_left = get_field('team_left', $widget_id);
-            $data->team_right = get_field('team_right', $widget_id);
-            $data->affiliate_link = get_field('affiliate_link', $widget_id);
-            $data->affiliate_text = get_field('affiliate_text', $widget_id);
-
-            if (have_rows('odds', $widget_id)) {
-                while (have_rows('odds', $widget_id)) {
+            $data->display_as_carousel = get_field('use_carousel', $widget_id);
+            $data->carousel_name = get_field('carousel_name', $widget_id);
+            
+            if (have_rows('highlighted_events', $widget_id)) {
+                while (have_rows('highlighted_events', $widget_id)) {
                     the_row();
-                    array_push($data->odds, array(
-                        'label' => get_sub_field('odd_label', $widget_id),
-                        'value' => get_sub_field('odd_value', $widget_id)
-                    ));
+                    $evt = get_sub_field('event', $widget_id);
+                    $event = new Event();
+                    $event->event_name = $evt->event_name;
+                    $event->event_logo = $evt->event_logo;
+                    $event->event_punchline = $evt->event_punchline;
+                    $event->event_date =  $evt->event_date;
+                    $event->team_left = $evt->team_left; 
+                    $event->team_right = $evt->team_right;
+                    $event->team_left_logo = $evt->team_left_logo;
+                    $event->team_right_logo = $evt->team_right_logo;  
+                    $event->affiliate_link = $evt->affiliate_link; 
+                    $event->affiliate_text = $evt->affiliate_text; 
+
+                    if (have_rows('odds', $evt)) {
+                        while (have_rows('odds', $evt)) {
+                            the_row();
+                            array_push($event->odds, array(
+                                'label' => get_sub_field('odd_label', $evt),
+                                'value' => get_sub_field('odd_value', $evt)
+                            ));
+                        }
+                    }
+                    array_push($data->events, $event);
                 }
             }
             echo ViewRenderer::render('dg-widget.php', $data);
@@ -65,14 +80,30 @@ if (!class_exists('DailyGame_Widget')) {
 class DailyGameWidget
 {
     public $widget_title;
+    public $display_as_carousel;
+    public $carousel_name;
+
+    public $events;
+
+    public function __construct()
+    {
+        $this->events = array();
+    }
+}
+
+class Event
+{
     public $odds;
     public $event_punchline;
     public $event_date;
+    public $event_name;
+    public $event_logo;
     public $team_left;
+    public $team_left_logo;
     public $team_right;
+    public $team_right_logo;
     public $affiliate_link;
     public $affiliate_text;
-
     public function __construct()
     {
         $this->odds = array();
