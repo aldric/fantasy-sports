@@ -19,6 +19,7 @@ include(__ROOT__ . "/widgets/ranking.widget.php");
 include(__ROOT__ . "/widgets/bk.offer.php");
 include(__ROOT__ . "/widgets/dg.widget.php");
 include(__ROOT__ . "/shortcodes/bk-codes.php");
+include(__ROOT__ . "/admin/odds.admin.php");
 
 function fantasy_plugin_enqueue_styles()
 {
@@ -107,26 +108,13 @@ add_action('init', 'cptui_register_my_cpts_fiche_highlighted_event');
 
 
 
+
 /*******************************
  * 
  *  JORDAN'S CHANGES DANGEROUS TO TOUCH
  * 
  **********************************/
 
-// if (function_exists('add_image_size')) {
-// 	add_image_size('widget-sidebar', 300, 148, true);
-// }
-
-// $query = new WP_Query(array('post_type'=> array('page', 'rugby', 'tennis', 'golf', 'athletisme', 'football', 'handball', 'basketball', 'jeuxolympiques', 'esport' ), 'post_status'=>'publish', 'posts_per_page'=>-1));
-
-// $plop = $query->get_posts();
-
-// $perms = '';
-// foreach($plop as $post) {
-// 	$perms .= get_post_permalink($post). '<br/>';
-// }
-// echo($perms);
-//check_urls();
 
 add_action('init', 'dcc_rewrite_rules');
 function dcc_rewrite_rules()
@@ -160,23 +148,12 @@ function ajout_trailingslash($url, $type)
 	return trailingslashit($url);
 }
 
-// function wpdocs_custom_excerpt_length( $length ) {
-//     return 70;
-// }
-// add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
-
 // Editer la query si aucune catégorie n'est sélectionnée on va sur la catégorie fantasy
 function my_modify_main_query($query)
 {
 	if (is_admin()) return;
 	if ($query->is_archive() && $query->is_main_query() && !$query->is_category()) {
 		$query->query_vars['cat'] = 62;
-    /*
-    $loop = new WP_Query( $query );
-    if(sizeof($loop===0)) {
-        $query->query_vars['cat'] = null;
-    }
-		 */
 	}
 }
 // Hook my above function to the pre_get_posts action
@@ -316,7 +293,5 @@ function has_children($post_ID = null)
 }
 
 
-// // Add image sizes
-// add_image_size( 'widget-sidebar', 240, 240, true ); 
 
 

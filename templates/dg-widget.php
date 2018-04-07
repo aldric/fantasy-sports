@@ -10,15 +10,16 @@
             <div class="slide-caption">
                 <div><img src="<?php echo $event->event_logo; ?>" /><span><?php echo $event->event_name; ?></span></div>
                 <div class="match-time"><?php echo $event->event_date; ?></div>
+                <div class="match-teams"><div><?php echo $event->team_left; ?></div><div><?php echo $event->team_right; ?></div></div>
             </div>
             <div class="teams">
                 <div class="left">
+                    
                     <div class="team-img"><img src="<?php echo $event->team_left_logo; ?>" /></div>
-                    <div class="team-caption"><?php echo $event->team_left; ?></div>
                 </div>
                 <div class="right">
+                    
                     <div class="team-img"><img src="<?php echo $event->team_right_logo; ?>" /></div>
-                    <div class="team-caption"><?php echo $event->team_right; ?></div>
                 </div>
             </div>
             <div class="slide-footer">
@@ -32,7 +33,7 @@
                 </div>
                 <?php endforeach; ?>
             </div>
-            <div class="overlay-b"><div><a class="btn-mat green" href="<?php echo $event->affiliate_link; ?>" target="_blank" rel="nofollow"><?php echo $event->affiliate_text; ?></a></div></div>
+            <div class="overlay-b"><div><a class="btn-mat cyan" href="<?php echo $event->affiliate_link; ?>" target="_blank" rel="nofollow"><?php echo $event->affiliate_text; ?></a></div></div>
         </div>
     </div>
     <?php endforeach; ?>

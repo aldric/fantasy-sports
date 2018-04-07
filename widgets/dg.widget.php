@@ -1,5 +1,5 @@
 <?php
-
+setlocale(LC_ALL, 'fr_FR');
 if (!class_exists('DailyGame_Widget')) {
     class DailyGame_Widget extends WP_Widget
     {
@@ -48,7 +48,7 @@ if (!class_exists('DailyGame_Widget')) {
                     $event->event_name = $evt->event_name;
                     $event->event_logo = $evt->event_logo;
                     $event->event_punchline = $evt->event_punchline;
-                    $event->event_date =  $evt->event_date;
+                    $event->event_date =  $evt->date;
                     $event->team_left = $evt->team_left; 
                     $event->team_right = $evt->team_right;
                     $event->team_left_logo = $evt->team_left_logo;

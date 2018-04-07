@@ -607,19 +607,22 @@ aside.daily-games-widget div.mat-card div.mat-container {
     background: #ffe57ff5;
 }
 
-aside.daily-games-widget .team-caption {
-    background: rgba(0, 0, 0, 0.45);
+aside.daily-games-widget .match-teams {
     color: #fff;
     font-size: 14px;
     font-weight: 400;
-    margin-top: 8px;
+    display: flex;
+}
+
+aside.daily-games-widget .match-teams div {
+    width: 50%;
 }
 
 aside.daily-games-widget .slide-caption {
-    height: 55px;
     background: rgba(0, 0, 0, 0.5);
     text-align: center;
 }
+
 aside.daily-games-widget .slide-caption img {
     display: inline;
 }
@@ -645,7 +648,7 @@ aside.daily-games-widget .slide-caption span {
 
 aside.daily-games-widget .slide-caption .match-time {
     color: #999;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     text-transform: capitalize;
 }
@@ -733,7 +736,7 @@ aside.daily-games-widget .overlay-b {
     flex-direction: column;
     justify-content: flex-end;
     display: flex;
-    height: 60%;
+    height: 70%;
 }
 
 aside.daily-games-widget .overlay-b div {
