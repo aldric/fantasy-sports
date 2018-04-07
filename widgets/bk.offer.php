@@ -35,8 +35,30 @@ if (!class_exists('BookmakerOffer_Widget')) {
             global $post;
             if ($post == null)
                 return '';
-            $data = $this->repository->get_bookmakers_data('');
-            $data[0]->widget_title = get_field('widget_ranking_title', $widget_id);
+          
+            $bookies = array();
+            if (have_rows('bookmakers', $widget_id)) {
+                while (have_rows('bookmakers', $widget_id)) {
+                    the_row();
+                    $bookie = get_sub_field('bookmaker', $widget_id);
+                    $image = wp_get_attachment_image_src($bookie->bk_image)['url'];
+                    $bonus = $bookie->bk_bonus;
+                    $aff_link_color = $bookie->bk_aff_link_color;
+                    $aff_link = $bookie->bk_aff_link;
+                    $aff_text_short = $bookie->bk_aff_text_short;
+                    array_push($bookies, array(
+                        'image' => $image,
+                        'bonus' => $bonus,
+                        'aff_link_color' => $aff_link_color,
+                        'aff_link' => $aff_link,
+                        'aff_text_short' => $aff_text_short
+                    ));
+                }
+                $data = array(
+                    'widget_title' =>  get_field('widget_title', $widget_id) ,
+                    'bookies' => $bookies
+                );
+            }
             echo ViewRenderer::render('bk-offer-widget.php', $data);
         }
     }
