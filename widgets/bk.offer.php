@@ -41,7 +41,7 @@ if (!class_exists('BookmakerOffer_Widget')) {
                 while (have_rows('bookmakers', $widget_id)) {
                     the_row();
                     $bookie = get_sub_field('bookmaker', $widget_id);
-                    $image = wp_get_attachment_image_src($bookie->bk_image)['url'];
+                    $image = wp_get_attachment_image_src($bookie->bk_image)[0];
                     $bonus = $bookie->bk_bonus;
                     $aff_link_color = $bookie->bk_aff_link_color;
                     $aff_link = $bookie->bk_aff_link;
