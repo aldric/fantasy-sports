@@ -32,6 +32,7 @@ if (!class_exists('Bookmaker_Repository')) {
             $the_query = new WP_Query(array(
                 'post_type' => 'fiche_bookmaker',
                 'post_name__in' => $bookies_array,
+                'orderby ' => 'post_name__in'
             ));
             $data = array();
 

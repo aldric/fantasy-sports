@@ -15,12 +15,17 @@ function flbox_func($atts, $content = null)
 add_shortcode('fantasy-box', 'flbox_func');
 
 
-function get_data_and_render($template, $atts) {
+function get_data_and_render($template, $atts)
+{
     $a = shortcode_atts(array(
         'bookies' => '',
     ), $atts);
-    $bookies_input = $a['banks'];
+    $bookies_input = $a['bookies'];
     $repository = new Bookmaker_Repository();
-    $data = $repository->get_bookmakers_data($bookies_input);
+    $br = $bookies_input == '' ? null : explode("|", $bookies_input);
+    $data = $repository->get_bookmakers_data($br);
+    usort($data, function($k1, $k2) use($br) {
+        return array_search(strtolower($k1->name), $br) > array_search(strtolower($k2->name), $br) ? 1 : -1;
+    });
     return ViewRenderer::render($template, $data);
 }

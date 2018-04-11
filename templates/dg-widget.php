@@ -1,6 +1,8 @@
 
 <aside class="daily-games-widget">
+<?php if(strlen($data->widget_title) > 0) : ?>    
 <h3 class="widget-title"><span><?php echo $data->widget_title; ?></span></h3>
+<?php endif; ?>
 <?php if ($data->display_as_carousel) : ?>
 <div class="bxslider <?php echo $data->carousel_name; ?>">
 <?php endif; ?>
