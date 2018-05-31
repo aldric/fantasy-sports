@@ -744,3 +744,111 @@ aside.daily-games-widget div.overlay-b a {
     padding: 6px 10px;
     font-size: 14px;
 }
+
+.f-table {
+    display: flex;
+    flex-flow: column nowrap;
+    box-pack: justify;
+    justify-content: space-between;
+    border: 1px solid #f2f2f2;
+    font-size: 1rem;
+    margin: 0.5rem;
+    line-height: 1.5;
+}
+
+.f-table-header {
+    display: none;
+}
+
+@media (min-width: 500px) {
+    .f-table-header {
+        font-weight: 700;
+        background-color: #f2f2f2;
+    }
+}
+
+.f-table-row {
+    width: 100%;
+}
+
+.f-table-row:nth-of-type(even) {
+    background-color: #f2f2f2;
+}
+
+.f-table-row:nth-of-type(odd) {
+    background-color: #ffffff;
+}
+
+@media (min-width: 500px) {
+    .f-table-row {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+    .f-table-row:nth-of-type(even) {
+        background-color: #ffffff;
+    }
+    .f-table-row:nth-of-type(odd) {
+        background-color: #f2f2f2;
+    }
+}
+
+.f-table-row-item {
+    display: flex;
+    flex-flow: row nowrap;
+    box-flex: 1;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0.5em;
+    word-break: break-word;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-table-row-item img {
+    max-width: 64px;
+}
+
+/* .f-table-row-item:before {
+    content: attr(data-header);
+    width: 30%;
+    font-weight: 700;
+} */
+
+@media (min-width: 500px) {
+    .f-table-row-item {
+        border: 1px solid #ffffff;
+        padding: 0.5em;
+    }
+    /* .f-table-row-item:before {
+        content: none;
+    } */
+}
+
+.btn-odd {
+    font-size: 14px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin: 0 2px;
+}
+
+.f-table-row-item .btn-small {
+    font-size: 16px;
+    padding: 7px 20px;
+}
+
+.f-table-row-item .btn-floating {
+    background-color: transparent;
+    color: #045194;
+    border: 1px solid #045194;
+}
+
+.f-table-row-item .btn-floating.primary {
+    background-color: #045194;
+    color: #fff;
+}
+
+.f-table-row-item div.h5 {
+    text-align: center;
+}

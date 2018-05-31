@@ -2,7 +2,7 @@
 <aside class="bk-widget">
 <h3 class="widget-title"><span><?php echo $data->widget_title; ?></span></h3>
     <div class="mat-card">
-        <div class="bk-img"><img src="<?php echo $data->image; ?>" /></div>
+        <div class="bk-img"><img src="<?php echo $data->image; ?>" alt="<?php echo 'Logo '.$data->name; ?>" /></div>
         <div class="bk-note">
         <ul class="rating-gold">
             <?php
@@ -91,7 +91,7 @@
             ?>
         </ul>
         </div>
-    <div class="bk-center h4"><img src="<?php echo $data->fl_image; ?>"></img></div>
+    <div class="bk-center h4"><img src="<?php echo $data->fl_image; ?>" alt="<?php echo 'Logo '.$data->fl_name; ?>"></img></div>
     <div class="bk-line"><span class="h5"><?php echo $data->bonus_label; ?></span><span class="h4 bl text-success-2"><?php echo $data->bonus; ?></span></div>
     <div class="bk-line"><span class="h5"><?php echo $data->bonus_type_label; ?></span><span class="h4 bl text-success-2"><?php echo $data->bonus_type; ?></span></div>
     <div class="bk-line"><span class="h5"><?php echo $data->fl_buyin_label; ?></span><span class="h4 bl text-success-2"><?php echo $data->fl_buyin; ?></span></div>

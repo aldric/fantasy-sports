@@ -10,18 +10,18 @@
     <div class="mat-card">
         <div class="mat-container">
             <div class="slide-caption">
-                <div><img src="<?php echo $event->event_logo; ?>" /><span><?php echo $event->event_name; ?></span></div>
+                <div><img src="<?php echo $event->event_logo; ?>"  alt="<?php echo 'Logo '.$event->event_name; ?>" /><span><?php echo $event->event_name; ?></span></div>
                 <div class="match-time"><?php echo $event->event_date; ?></div>
                 <div class="match-teams"><div><?php echo $event->team_left; ?></div><div><?php echo $event->team_right; ?></div></div>
             </div>
             <div class="teams">
                 <div class="left">
                     
-                    <div class="team-img"><img src="<?php echo $event->team_left_logo; ?>" /></div>
+                    <div class="team-img"><img src="<?php echo $event->team_left_logo; ?>" alt="<?php echo 'Logo '.$event->team_left; ?>" /></div>
                 </div>
                 <div class="right">
                     
-                    <div class="team-img"><img src="<?php echo $event->team_right_logo; ?>" /></div>
+                    <div class="team-img"><img src="<?php echo $event->team_right_logo; ?>" alt="<?php echo 'Logo '.$event->team_right; ?>" /></div>
                 </div>
             </div>
             <div class="slide-footer">

@@ -7,7 +7,7 @@
     </div> -->
         <div class="flex-container">
             <div class="bk-center h4"><?php echo $bookie->name; ?></div>
-            <div class="bk-img"><img src="<?php echo $bookie->fl_image; ?>" /></div>
+            <div class="bk-img"><img src="<?php echo $bookie->fl_image; ?>" alt="<?php echo 'Logo '.$bookie->fl_name; ?>" /></div>
             <div class="bk-center h4"><?php echo $bookie->fl_name; ?></div>
             <div class="bk-note">
             <ul class="rating-gold">

@@ -48,17 +48,6 @@ if (!class_exists('Ranking_Widget')) {
                 $data->widget_title = get_field('widget_ranking_title', $widget_id) . ' ' . $data->name;
                 $data->widget_title_fl =  get_field('widget_ranking_title_fl', $widget_id) . ' ' . $data->name;
                 echo ViewRenderer::render('bk-ranking-widget.php', $data);
-            //     $review = new BankReviewJson($data->name,
-            //                                  $data->address,
-            //                                  $data->image,
-            //                                  $data->welcome_offer,
-            //                                  $data->affiliate_link,
-            //                                  round($data->mean / 20, 2),
-            //                                  'Revue de la banque en ligne : '.$data->name,
-            //                                  $data->opinion_text,
-            //                                  $data->bank_phone);
-            //     echo '<script type="text/javascript"> var bankRankingWidget='.json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES).';</script>';
-            //     echo '<script type = "application/ld+json" >'.$review->toJson().'</script>';
             }
         }
     }
