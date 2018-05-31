@@ -45,18 +45,18 @@ function get_data_and_render($template, $atts)
 function pronos_func($atts, $content = null)
 {
     $a = shortcode_atts(array(
-        'headerDate' => 'Date et heure',
-        'headerComp' => 'Compétitions',
-        'headerMatch' => 'Match',
-        'headerProno' => 'Notre prono foot',
-        'headerBet' => 'Pariez'
+        'headerdate' => '',
+        'headercomp' => '',
+        'headermatch' => '',
+        'headerprono' => '',
+        'headerbet' => ''
     ), $atts);
     $output = '<div class="f-table"><div class="f-table-row f-table-header">';
-    $output .= '<div class="f-table-row-item"><div class="h6">' . $a['headerDate'] . '</div></div>';
-    $output .= '<div class="f-table-row-item"><div class="h6">' . $a['headerComp'] . '</div></div>';
-    $output .= '<div class="f-table-row-item"><div class="h6">' . $a['headerMatch'] . '</div></div>';
-    $output .= '<div class="f-table-row-item"><div class="h6">' . $a['headerProno'] . '</div></div>';
-    $output .= '<div class="f-table-row-item"><div class="h6">' . $a['headerBet'] . '</div></div>';
+    $output .= $a['headerdate'] != '' ? '<div class="f-table-row-item"><div class="h6">' . $a['headerdate'] . '</div></div>' : '';
+    $output .= $a['headercomp'] != '' ?  '<div class="f-table-row-item"><div class="h6">' . $a['headercomp'] . '</div></div>': '';
+    $output .= $a['headermatch'] != '' ?  '<div class="f-table-row-item"><div class="h6">' . $a['headermatch'] . '</div></div>': '';
+    $output .= $a['headerprono'] != '' ?  '<div class="f-table-row-item"><div class="h6">' . $a['headerprono'] . '</div></div>': '';
+    $output .= $a['headerbet'] != '' ?  '<div class="f-table-row-item"><div class="h6">' . $a['headerbet'] . '</div></div>': '';
     $output .= '</div>';
 
     $output .= do_shortcode($content);
@@ -74,10 +74,10 @@ function prono_func($atts, $content = null)
         'alt' => 'alt text',
         'team1' => 'Olympique de Marseille',
         'team2' => 'Paris Saint Germain',
-        'one' => '1',
-        'x' => '1',
-        'two' => '1',
-        'choice' => 'x',
+        'one' => '',
+        'x' => '',
+        'two' => '',
+        'choice' => '',
         'link' => 'about:blank',
         'linkText' => 'Pariez !!'
 
@@ -89,8 +89,10 @@ function prono_func($atts, $content = null)
     $content = '<div class="f-table-row">';
     $content .= '<div class="f-table-row-item"><div class="h5">' . $a['date'] . ' ' . $a['time'] . '</div></div>';
     $content .= '<div class="f-table-row-item"><div><img src="' . $a['comp'] . '" alt="' . $a['alt'] . '" /></div></i</div></div>';
-    $content .= '<div class="f-table-row-item"><div class="h5">' . $a['team1'] . ' ' . $a['team2'] . '</div></div>';
-    $content .= '<div class="f-table-row-item"><div><span class="btn-floating btn-odd ' . $oneClass . '">' . $a['one'] . '</span><span class="btn-floating btn-odd ' . $xClass . '">' . $a['x'] . '</span><span class="btn-floating btn-odd ' . $twoClass . '">' . $a['two'] . '</span></div></div>';
+    $content .= '<div class="f-table-row-item"><div class="h5"><div class="' . $oneClass . '-c" >' . $a['team1'] . '</div><div class="' . $twoClass . '-c" >' . $a['team2'] . '</div></div></div>';
+    $content .= $a['one'] != '' ? '<div class="f-table-row-item"><div><span class="btn-floating btn-odd ' . $oneClass . '">' . $a['one'] . '</span>' : '';
+    $content .= $a['x'] != '' ? '<span class="btn-floating btn-odd ' . $xClass . '">' . $a['x'] . '</span>' : '';
+    $content .= $a['two'] != '' ? '<span class="btn-floating btn-odd ' . $twoClass . '">' . $a['two'] . '</span></div></div>' : '';
     $content .= '<div class="f-table-row-item"><div><a class="btn-mat btn-small orange" href="' . $a['link'] . '" role="button" target="_blank" rel="nofollow">' . $a['linkText'] . '</a></div></div>';
     $content .= '</div>';
     return $content;

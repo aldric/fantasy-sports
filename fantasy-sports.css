@@ -838,6 +838,10 @@ aside.daily-games-widget div.overlay-b a {
     padding: 7px 20px;
 }
 
+div.primary-c {
+    color: #045194;
+}
+
 .f-table-row-item .btn-floating {
     background-color: transparent;
     color: #045194;
