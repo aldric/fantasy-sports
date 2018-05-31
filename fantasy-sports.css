@@ -842,6 +842,13 @@ div.primary-c {
     color: #045194;
 }
 
+div.primary-c:before,
+.f-table-row-item .btn-floating.primary:after {
+    content: "\2605";
+    color: gold;
+    font-size: 1.2em;
+}
+
 .f-table-row-item .btn-floating {
     background-color: transparent;
     color: #045194;
