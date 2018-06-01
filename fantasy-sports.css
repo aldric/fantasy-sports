@@ -779,6 +779,17 @@ aside.daily-games-widget div.overlay-b a {
     background-color: #ffffff;
 }
 
+@media (max-width: 499px) {
+    .f-table {
+        border: none;
+    }
+    .f-table-row {
+        padding-bottom: 10px;
+        box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+        margin-bottom: 10px;
+    }
+}
+
 @media (min-width: 500px) {
     .f-table-row {
         display: flex;
@@ -802,6 +813,10 @@ aside.daily-games-widget div.overlay-b a {
     word-break: break-word;
     align-items: center;
     justify-content: center;
+}
+
+.f-table-row-item.col {
+    flex-flow: column nowrap;
 }
 
 .f-table-row-item img {
@@ -839,27 +854,46 @@ aside.daily-games-widget div.overlay-b a {
 }
 
 div.primary-c {
-    color: #045194;
+    color: #029e0f;
 }
 
-div.primary-c:before,
-.f-table-row-item .btn-floating.primary:after {
+div.primary-d {
+    color: #029e0f;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+div.primary-c:before {
     content: "\2605";
     color: gold;
     font-size: 1.2em;
 }
 
+div.primary-d:before {
+    content: "\2713";
+    color: #029e0f;
+    font-size: 1.2em;
+}
+
 .f-table-row-item .btn-floating {
     background-color: transparent;
-    color: #045194;
-    border: 1px solid #045194;
+    color: #029e0f;
+    border: 1px solid #029e0f;
 }
 
 .f-table-row-item .btn-floating.primary {
-    background-color: #045194;
+    background-color: #029e0f;
     color: #fff;
 }
 
 .f-table-row-item div.h5 {
     text-align: center;
+}
+
+@media (min-width: 500px) and (max-width:993px) {
+    .f-table-row-item .btn-small {
+        font-size: 1.2rem;
+        padding: 4px 10px;
+    }
 }

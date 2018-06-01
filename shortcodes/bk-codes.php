@@ -68,23 +68,25 @@ add_shortcode('pronos', 'pronos_func');
 function prono_func($atts, $content = null)
 {
     $a = shortcode_atts(array(
-        'date' => '30/05/2018',
-        'time' => '21h00',
-        'comp' => '/images/football/competitions/small/20.png',
-        'alt' => 'alt text',
-        'team1' => 'Olympique de Marseille',
-        'team2' => 'Paris Saint Germain',
+        'date' => '',
+        'time' => '',
+        'comp' => '',
+        'alt' => '',
+        'team1' => '',
+        'team2' => '',
         'one' => '',
         'x' => '',
         'two' => '',
         'choice' => '',
-        'link' => 'about:blank',
-        'linkText' => 'Pariez !!'
+        'link' => '',
+        'linktext' => '',
+        'undertext' => ''
 
     ), $atts);
     $oneClass = $a['choice'] == 'one' ? 'primary' : '';
     $xClass = $a['choice'] == 'x' ? 'primary' : '';
     $twoClass = $a['choice'] == 'two' ? 'primary' : '';
+    $direction = $a['undertext'] == '' ? '' : 'col';
 
     $content = '<div class="f-table-row">';
     $content .= '<div class="f-table-row-item"><div class="h5">' . $a['date'] . ' ' . $a['time'] . '</div></div>';
@@ -93,12 +95,11 @@ function prono_func($atts, $content = null)
     $content .= $a['one'] != '' ? '<div class="f-table-row-item"><div><span class="btn-floating btn-odd ' . $oneClass . '">' . $a['one'] . '</span>' : '';
     $content .= $a['x'] != '' ? '<span class="btn-floating btn-odd ' . $xClass . '">' . $a['x'] . '</span>' : '';
     $content .= $a['two'] != '' ? '<span class="btn-floating btn-odd ' . $twoClass . '">' . $a['two'] . '</span></div></div>' : '';
-    $content .= '<div class="f-table-row-item"><div><a class="btn-mat btn-small orange" href="' . $a['link'] . '" role="button" target="_blank" rel="nofollow">' . $a['linkText'] . '</a></div></div>';
+    $content .= '<div class="f-table-row-item '.$direction.'"><div><a class="btn-mat btn-small orange" href="' . $a['link'] . '" role="button" target="_blank" rel="nofollow">' . $a['linktext'] . '</a></div>'; 
+    $content .= $a['undertext'] != '' ?  '<div class="h6 primary-d">'.$a['undertext'].'</div></div>' : '</div>';
     $content .= '</div>';
     return $content;
 }
 add_shortcode('prono', 'prono_func');
-//<span class="btn-floating btn-odds primary">
-//http://inlehmansterms.net/2014/10/11/responsive-tables-with-flexbox/
-//https://developer.mozilla.org/fr/docs/Web/CSS/attr
                 
+/*<div class="h6 primary-d">Avec la meilleure cote</div>*/
