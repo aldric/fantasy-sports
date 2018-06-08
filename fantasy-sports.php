@@ -12,14 +12,15 @@ Version: 0.1
 
  */
 define('__ROOT__', realpath(dirname(__FILE__)));
-include(__ROOT__ . '/class/Bookmaker_Repository.php');
-include(__ROOT__ . '/class/Helpers.php');
-include(__ROOT__ . '/class/ViewRenderer.php');
-include(__ROOT__ . "/widgets/ranking.widget.php");
-include(__ROOT__ . "/widgets/bk.offer.php");
-include(__ROOT__ . "/widgets/dg.widget.php");
-include(__ROOT__ . "/shortcodes/bk-codes.php");
-include(__ROOT__ . "/admin/odds.admin.php");
+require_once(__ROOT__ . '/class/Bookmaker_Repository.php');
+require_once(__ROOT__ . '/class/Helpers.php');
+require_once(__ROOT__ . '/class/ViewRenderer.php');
+require_once(__ROOT__ . "/widgets/ranking.widget.php");
+require_once(__ROOT__ . "/widgets/bk.offer.php");
+require_once(__ROOT__ . "/widgets/dg.widget.php");
+require_once(__ROOT__ . "/widgets/ff.widget.php");
+require_once(__ROOT__ . "/shortcodes/bk-codes.php");
+require_once(__ROOT__ . "/admin/odds.admin.php");
 
 
 

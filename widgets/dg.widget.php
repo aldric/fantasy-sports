@@ -35,11 +35,17 @@ if (!class_exists('DailyGame_Widget')) {
             global $post;
             if ($post == null)
                 return '';
+
+            $should_display = get_field('should_display_daily_game_widget', $post->ID);
+
+            if (!$should_display)
+                return '';
+
             $data = new DailyGameWidget();
             $data->widget_title = get_field('widget_title', $widget_id);
             $data->display_as_carousel = get_field('use_carousel', $widget_id);
             $data->carousel_name = get_field('carousel_name', $widget_id);
-            
+
             if (have_rows('highlighted_events', $widget_id)) {
                 while (have_rows('highlighted_events', $widget_id)) {
                     the_row();
@@ -48,13 +54,13 @@ if (!class_exists('DailyGame_Widget')) {
                     $event->event_name = $evt->event_name;
                     $event->event_logo = $evt->event_logo;
                     $event->event_punchline = $evt->event_punchline;
-                    $event->event_date =  $evt->date;
-                    $event->team_left = $evt->team_left; 
+                    $event->event_date = $evt->date;
+                    $event->team_left = $evt->team_left;
                     $event->team_right = $evt->team_right;
                     $event->team_left_logo = $evt->team_left_logo;
-                    $event->team_right_logo = $evt->team_right_logo;  
-                    $event->affiliate_link = $evt->affiliate_link; 
-                    $event->affiliate_text = $evt->affiliate_text; 
+                    $event->team_right_logo = $evt->team_right_logo;
+                    $event->affiliate_link = $evt->affiliate_link;
+                    $event->affiliate_text = $evt->affiliate_text;
 
                     if (have_rows('odds', $evt)) {
                         while (have_rows('odds', $evt)) {

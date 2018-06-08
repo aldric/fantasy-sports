@@ -38,6 +38,7 @@ div.mat-card ul li:first-child {
     padding: 4px 10px;
 }
 
+
 .btn-mat:hover,
 .btn-mat:focus {
     color: white;
@@ -696,6 +697,72 @@ aside.daily-games-widget a.odd-value {
     border-radius: 2px;
     font-size: 14px;
     box-shadow: 0 3px 1px -2px rgba(1, 1, 1, .2), 0 2px 2px 0 rgba(1, 1, 1, .14), 0 1px 5px 0 rgba(1, 1, 1, .12);
+}
+
+div.mat-card div.fantasy-card {
+    background-image: url('images/fantasy-football.jpg');
+    background-size: contain;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+div.mat-card.ff-card {
+    padding: 0;
+}
+div.team-display {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: 100%;
+}
+div.team-player {
+    background-image: url('images/football-jersey-fantasy-32.png');
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 50px;
+    color: white;
+    font-size: 12px;
+    white-space: pre-wrap;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 3px;
+    line-height: 12px;
+    text-align: center;
+}
+div.team-player > div {
+    background-color: #045194a6;
+    /* padding: 1px 0; */
+    /* color: #444444; */
+    border: 1px solid transparent;
+    border-radius: 6px;
+}
+div.team-line, div.team-keeper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+div.team-formation {
+    color: #d3ebff;
+    background: rgba(0, 0, 0, 0.5);
+    margin-top: 23px;
+    font-size: 1.5em;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 2px;
+}
+div.ff-cta {
+    text-align: center;
+}
+div.ff-cta .btn-small {
+    padding: 10px;
 }
 
 .bx-wrapper .bx-controls-direction a {
