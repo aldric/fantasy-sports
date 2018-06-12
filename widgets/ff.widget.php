@@ -42,6 +42,7 @@ if (!class_exists('FantasyFormation_Widget')) {
 
             $data = new FantasyFormationWidget();
             $data->widget_title = get_field('widget_title', $widget_id);
+            $data->widget_subtitle = get_field('widget_subtitle', $widget_id);
             $data->affiliate_link = get_field('affiliate_link', $widget_id);
             $data->affiliate_text = get_field('affiliate_text', $widget_id);
             $data->team_goal_keeper = get_field('team_goal_keeper', $widget_id);
@@ -76,6 +77,7 @@ if (!class_exists('FantasyFormation_Widget')) {
 class FantasyFormationWidget
 {
     public $widget_title;
+    public $widget_subtitle;
     public $affiliate_link;
     public $affiliate_text;
     public $team_formation;

@@ -1,6 +1,7 @@
 <aside>
     <?php if (strlen($data->widget_title) > 0) : ?>    
     <h3 class="widget-title"><span><?php echo $data->widget_title; ?></span></h3>
+    <h4 class="widget-subtitle"><?php echo $data->widget_subtitle; ?></span></h4>
     <?php endif; ?>
     <div>
         <div class="mat-card ff-card">

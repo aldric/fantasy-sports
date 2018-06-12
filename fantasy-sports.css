@@ -958,6 +958,10 @@ div.primary-d:before {
     text-align: center;
 }
 
+.widget-subtitle {
+    text-align: center;
+}
+
 @media (min-width: 500px) and (max-width:993px) {
     .f-table-row-item .btn-small {
         font-size: 1.2rem;
