@@ -48,7 +48,7 @@
             </div>
         </div>
         <div class="ff-cta">
-            <a class="btn-mat btn-small cyan" href="<?php echo $data->affiliate_link; ?>" target="_blank" rel="nofollow"><?php echo $data->affiliate_text; ?></a>
+            <a class="btn-mat btn-small orange" href="<?php echo $data->affiliate_link; ?>" target="_blank" rel="nofollow"><?php echo $data->affiliate_text; ?></a>
         </div>
     </div>
 </aside>
