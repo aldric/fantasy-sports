@@ -27,7 +27,7 @@ require_once(__ROOT__ . "/admin/odds.admin.php");
 function fantasy_plugin_enqueue_styles()
 {
 	$template_directory = plugin_dir_url(__FILE__);
-	wp_register_style('fantasy-css', $template_directory . 'fantasy-sports.css', false, '0.2', 'all');
+	wp_register_style('fantasy-css', $template_directory . 'fantasy-sports.css', false, '0.3', 'all');
 	wp_enqueue_style('fantasy-css');
 }
 
