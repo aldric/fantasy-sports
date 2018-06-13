@@ -92,9 +92,9 @@ function prono_func($atts, $content = null)
     $content .= '<div class="f-table-row-item"><div class="h5">' . $a['date'] . ' ' . $a['time'] . '</div></div>';
     $content .= '<div class="f-table-row-item"><div><img src="' . $a['comp'] . '" alt="' . $a['alt'] . '" /></div></i</div></div>';
     $content .= '<div class="f-table-row-item"><div class="h5"><div class="' . $oneClass . '-c" >' . $a['team1'] . '</div><div class="' . $twoClass . '-c" >' . $a['team2'] . '</div></div></div>';
-    $content .= $a['one'] != '' ? '<div class="f-table-row-item"><div><span class="btn-floating btn-odd ' . $oneClass . '">' . $a['one'] . '</span>' : '';
+    $content .= $a['one'] != '' ? '<div class="f-table-row-item"><a href="' . $a['link'] . '" role="button" target="_blank" rel="nofollow"><div><span class="btn-floating btn-odd ' . $oneClass . '">' . $a['one'] . '</span>' : '';
     $content .= $a['x'] != '' ? '<span class="btn-floating btn-odd ' . $xClass . '">' . $a['x'] . '</span>' : '';
-    $content .= $a['two'] != '' ? '<span class="btn-floating btn-odd ' . $twoClass . '">' . $a['two'] . '</span></div></div>' : '';
+    $content .= $a['two'] != '' ? '<span class="btn-floating btn-odd ' . $twoClass . '">' . $a['two'] . '</span></div></a></div>' : '';
     $content .= '<div class="f-table-row-item '.$direction.'"><div><a class="btn-mat btn-small orange" href="' . $a['link'] . '" role="button" target="_blank" rel="nofollow">' . $a['linktext'] . '</a></div>'; 
     $content .= $a['undertext'] != '' ?  '<div class="h6 primary-d">'.$a['undertext'].'</div></div>' : '</div>';
     $content .= '</div>';
